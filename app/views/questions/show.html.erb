@@ -1,0 +1,22 @@
+<div>
+  <span><%= @question.title %></span>
+  <br>
+  <p>
+    <%= @question.body %>
+  </p>
+  <br>
+  <span><%= @question.asker %></span>
+</div>
+
+<h2>Answers:</h2>
+ <div>
+  <% @answers.each do |answer| %>
+  <p>
+    <%= answer.body %>
+  </p>
+  <br>
+  <span><%= answer.answerer %></span>
+  <br>
+  <span>=======================</span>
+  <%end%>
+</div>

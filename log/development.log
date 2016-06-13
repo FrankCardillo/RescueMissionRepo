@@ -1,0 +1,1941 @@
+  [1m[36m (24.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (5.9ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateQuestions (20160613163030)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateQuestions (20160613163030)
+  [1m[35m (1.4ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/frankcardillo/challenges/rescue-mission/db/migrate/20160613163030_create_questions.rb:7)
+  [1m[36m (22.7ms)[0m  [1mCREATE TABLE "questions" ("id" serial primary key, "asker" character varying NOT NULL, "title" character varying NOT NULL, "body" text NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (3.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160613163030"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (8.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'questions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateQuestions (20160613163030)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (12.0ms)[0m  DROP TABLE "questions"
+  [1m[36mSQL (2.3ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20160613163030"]]
+  [1m[35m (2.7ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateQuestions (20160613163030)
+  [1m[35m (0.3ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/frankcardillo/challenges/rescue-mission/db/migrate/20160613163030_create_questions.rb:7)
+  [1m[36m (14.9ms)[0m  [1mCREATE TABLE "questions" ("id" serial primary key, "asker" character varying NOT NULL, "title" character varying NOT NULL, "body" text NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160613163030"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'questions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (3.2ms)[0m  [1mINSERT INTO "questions" ("asker", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["asker", "Frank"], ["title", "How do I rails?"], ["body", "blah blah blah"], ["created_at", "2016-06-13 16:57:12.820233"], ["updated_at", "2016-06-13 16:57:12.820233"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+
+
+Started GET "/" for ::1 at 2016-06-13 12:57:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 12:57:51 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (2.1ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (28.1ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 7.8ms)
+
+ActionView::Template::Error (undefined method `show_question_path' for #<#<Class:0x007fe9c7cfc930>:0x007fe9c7cf45a0>):
+    3: <ul>
+    4: <%@questions.each do |question|%>
+    5:   <li>
+    6:     <%= link_to question.title, show_question_path(question) %>
+    7:   </li>
+    8: <%end%>
+    9: </ul>
+  app/views/questions/index.html.erb:6:in `block in _app_views_questions_index_html_erb___3076734663221274245_70321028168060'
+  app/views/questions/index.html.erb:4:in `_app_views_questions_index_html_erb___3076734663221274245_70321028168060'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (84.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (141.6ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 12:58:22 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `show' for #<#<Class:0x007fe9c7cfc930>:0x007fe9c7c84700>):
+    3: <ul>
+    4: <%@questions.each do |question|%>
+    5:   <li>
+    6:     <%= link_to question.title, show(question.id) %>
+    7:   </li>
+    8: <%end%>
+    9: </ul>
+  app/views/questions/index.html.erb:6:in `block in _app_views_questions_index_html_erb___3076734663221274245_70321027937500'
+  app/views/questions/index.html.erb:4:in `_app_views_questions_index_html_erb___3076734663221274245_70321027937500'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (46.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (106.2ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 12:58:43 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `pry' for #<Binding:0x007fe9c7ce57a8>):
+    3: <ul>
+    4: <%@questions.each do |question|%>
+    5:   <li>
+    6:     <%binding.pry%>
+    7:     <%= link_to question.title, show(question.id) %>
+    8:   </li>
+    9: <%end%>
+  app/views/questions/index.html.erb:6:in `block in _app_views_questions_index_html_erb___3076734663221274245_70321028185180'
+  app/views/questions/index.html.erb:4:in `_app_views_questions_index_html_erb___3076734663221274245_70321028185180'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (101.5ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:00:12 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 444ms (Views: 443.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:00:12 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:00:12 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:00:12 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:00:12 -0400
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:00:57 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (18.8ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined method `show_question_path' for #<#<Class:0x007fe9c7cfc930>:0x007fe9c69609a8>):
+    3: <ul>
+    4: <%@questions.each do |question|%>
+    5:   <li>
+    6:     <%= link_to question.title, show_question_path(@question) %>
+    7:   </li>
+    8: <%end%>
+    9: </ul>
+  app/views/questions/index.html.erb:6:in `block in _app_views_questions_index_html_erb___3076734663221274245_70321028753200'
+  app/views/questions/index.html.erb:4:in `_app_views_questions_index_html_erb___3076734663221274245_70321028753200'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (114.0ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:01:37 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (18.6ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 4.1ms)
+
+ActionView::Template::Error (undefined method `show_question_path' for #<#<Class:0x007fe9c9719f48>:0x007fe9c9723c00>):
+    3: <ul>
+    4: <%@questions.each do |question|%>
+    5:   <li>
+    6:     <%= link_to question.title, show_question_path(@question) %>
+    7:   </li>
+    8: <%end%>
+    9: </ul>
+  app/views/questions/index.html.erb:6:in `block in _app_views_questions_index_html_erb___3076734663221274245_70321028753200'
+  app/views/questions/index.html.erb:4:in `_app_views_questions_index_html_erb___3076734663221274245_70321028753200'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (99.5ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:01:49 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined local variable or method `show' for #<#<Class:0x007fe9c9719f48>:0x007fe9c9906568>):
+    3: <ul>
+    4: <%@questions.each do |question|%>
+    5:   <li>
+    6:     <%= link_to question.title, show %>
+    7:   </li>
+    8: <%end%>
+    9: </ul>
+  app/views/questions/index.html.erb:6:in `block in _app_views_questions_index_html_erb___3076734663221274245_70321042893120'
+  app/views/questions/index.html.erb:4:in `_app_views_questions_index_html_erb___3076734663221274245_70321042893120'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (105.0ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:03:11 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.7ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (17.9ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 5.6ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"questions", :id=>nil} missing required keys: [:id]):
+    3: <ul>
+    4: <%@questions.each do |question|%>
+    5:   <li>
+    6:     <%= link_to question.title, question_path(@question) %>
+    7:   </li>
+    8: <%end%>
+    9: </ul>
+  app/views/questions/index.html.erb:6:in `block in _app_views_questions_index_html_erb___1077857825178713125_70117337744520'
+  app/views/questions/index.html.erb:4:in `_app_views_questions_index_html_erb___1077857825178713125_70117337744520'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (27.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (89.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (57.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (132.3ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:03:52 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 303ms (Views: 301.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:03:53 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:03:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:03:53 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:03:53 -0400
+
+
+Started GET "/questions/1" for ::1 at 2016-06-13 13:03:56 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template questions/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/frankcardillo/challenges/rescue-mission/app/views"
+):
+  actionview (4.2.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.6) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/frankcardillo/.rubies/ruby-2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/frankcardillo/.rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/frankcardillo/.rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/frankcardillo/.rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (70.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (131.1ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:05:26 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 30ms (Views: 23.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:05:27 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:05:27 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:05:27 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:05:27 -0400
+
+
+Started GET "/questions/1" for ::1 at 2016-06-13 13:05:28 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered questions/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 26ms (Views: 12.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/1" for ::1 at 2016-06-13 13:07:08 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered questions/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:07:08 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:07:08 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:07:08 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:07:08 -0400
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:09:52 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (2.2ms)[0m  [1mSELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 30ms (Views: 21.3ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:09:52 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:09:52 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:09:52 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:09:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "questions" ("asker", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["asker", "Keane"], ["title", "How do I JavaScript?"], ["body", "blah blah blah"], ["created_at", "2016-06-13 17:10:37.288738"], ["updated_at", "2016-06-13 17:10:37.288738"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:10:40 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (1.3ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:10:40 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:10:40 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:10:40 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:10:40 -0400
+
+
+Started GET "/questions/2" for ::1 at 2016-06-13 13:10:45 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered questions/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.2ms)[0m  DELETE FROM "questions"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "questions" ("asker", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["asker", "Frank"], ["title", "How do I rails?"], ["body", "blah blah blah"], ["created_at", "2016-06-13 17:13:13.362119"], ["updated_at", "2016-06-13 17:13:13.362119"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "questions" ("asker", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["asker", "Keane"], ["title", "How do I JavaScript?"], ["body", "blah blah blah"], ["created_at", "2016-06-13 17:13:13.368760"], ["updated_at", "2016-06-13 17:13:13.368760"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:13:16 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (1.4ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 70ms (Views: 64.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:13:17 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:13:17 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:13:17 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:13:17 -0400
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:14:15 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC[0m
+  Rendered questions/index.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 59ms (Views: 51.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:14:16 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:14:16 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:14:16 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:14:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAnswers (20160613171603)
+  [1m[35m (0.3ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/frankcardillo/challenges/rescue-mission/db/migrate/20160613171603_create_answers.rb:7)
+  [1m[36m (11.0ms)[0m  [1mCREATE TABLE "answers" ("id" serial primary key, "answerer" character varying NOT NULL, "question_id" integer NOT NULL, "body" text NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160613171603"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'answers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (7.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'questions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateAnswers (20160613171603)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.3ms)[0m  DROP TABLE "answers"
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20160613171603"]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'questions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAnswers (20160613171603)
+  [1m[35m (0.4ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/frankcardillo/challenges/rescue-mission/db/migrate/20160613171603_create_answers.rb:7)
+  [1m[36m (14.7ms)[0m  [1mCREATE TABLE "answers" ("id" serial primary key, "answerer" character varying NOT NULL, "question_id" integer NOT NULL, "body" text NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160613171603"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'answers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'questions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:25:39 -0400
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.7ms)[0m  [1mSELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC[0m
+  Rendered questions/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 48ms (Views: 33.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:25:39 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:25:39 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:25:39 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:25:39 -0400
+
+
+Started GET "/questions/4" for ::1 at 2016-06-13 13:25:40 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered questions/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 29ms (Views: 11.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/questions/4" for ::1 at 2016-06-13 13:25:55 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 4]]
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 4.4ms)
+
+NoMethodError (undefined method `pry' for #<Binding:0x007f8aeb5bc7f0>):
+  app/controllers/questions_controller.rb:9:in `show'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.6ms)
+
+
+Started GET "/questions/4" for ::1 at 2016-06-13 13:27:11 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered questions/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 5.0ms)
+
+SyntaxError (/Users/frankcardillo/challenges/rescue-mission/app/views/questions/show.html.erb:22: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/frankcardillo/challenges/rescue-mission/app/views/questions/show.html.erb:24: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/questions/show.html.erb:22: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/questions/show.html.erb:24: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (108.4ms)
+
+
+Started GET "/questions/4" for ::1 at 2016-06-13 13:27:40 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mAnswer Load (1.3ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 1.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.5ms)[0m  DELETE FROM "questions"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "questions" ("asker", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["asker", "Frank"], ["title", "How do I rails?"], ["body", "blah blah blah"], ["created_at", "2016-06-13 17:29:29.994502"], ["updated_at", "2016-06-13 17:29:29.994502"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "questions" ("asker", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["asker", "Keane"], ["title", "How do I JavaScript?"], ["body", "blah blah blah"], ["created_at", "2016-06-13 17:29:30.001806"], ["updated_at", "2016-06-13 17:29:30.001806"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "answers"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "answers" ("answerer", "question_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["answerer", "David"], ["question_id", 2], ["body", "You should google it"], ["created_at", "2016-06-13 17:29:30.015016"], ["updated_at", "2016-06-13 17:29:30.015016"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "answers" ("answerer", "question_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["answerer", "David"], ["question_id", 2], ["body", "You should bing it"], ["created_at", "2016-06-13 17:29:30.018922"], ["updated_at", "2016-06-13 17:29:30.018922"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:29:35 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC[0m
+  Rendered questions/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:29:35 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:29:35 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:29:35 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:29:35 -0400
+
+
+Started GET "/questions/6" for ::1 at 2016-06-13 13:29:36 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mAnswer Load (0.9ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/5" for ::1 at 2016-06-13 13:29:40 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mAnswer Load (0.5ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 5]]
+  Rendered questions/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.9ms)
+  [1m[36mAnswer Load (0.9ms)[0m  [1mSELECT "answers".* FROM "answers"[0m
+
+
+Started GET "/questions/6" for ::1 at 2016-06-13 13:30:29 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mAnswer Load (152.7ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 6]]
+  Rendered questions/show.html.erb within layouts/application (153.7ms)
+Completed 200 OK in 197ms (Views: 41.8ms | ActiveRecord: 153.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (2.0ms)[0m  DELETE FROM "questions"
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "questions" ("asker", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["asker", "Frank"], ["title", "How do I rails?"], ["body", "blah blah blah"], ["created_at", "2016-06-13 17:31:00.479558"], ["updated_at", "2016-06-13 17:31:00.479558"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "questions" ("asker", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["asker", "Keane"], ["title", "How do I JavaScript?"], ["body", "blah blah blah"], ["created_at", "2016-06-13 17:31:00.487257"], ["updated_at", "2016-06-13 17:31:00.487257"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "answers"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "answers" ("answerer", "question_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["answerer", "David"], ["question_id", 6], ["body", "You should google it"], ["created_at", "2016-06-13 17:31:00.504787"], ["updated_at", "2016-06-13 17:31:00.504787"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "answers" ("answerer", "question_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["answerer", "David"], ["question_id", 6], ["body", "You should bing it"], ["created_at", "2016-06-13 17:31:00.508850"], ["updated_at", "2016-06-13 17:31:00.508850"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/questions/6" for ::1 at 2016-06-13 13:31:02 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=6):
+  app/controllers/questions_controller.rb:7:in `show'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (112.9ms)
+
+
+Started PUT "/__web_console/repl_sessions/a08ead0c22fc535c94fdf2766544edf7" for ::1 at 2016-06-13 13:31:44 -0400
+
+
+Started PUT "/__web_console/repl_sessions/a08ead0c22fc535c94fdf2766544edf7" for ::1 at 2016-06-13 13:31:49 -0400
+  [1m[36mQuestion Load (0.7ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "questions"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "questions" ("asker", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["asker", "Frank"], ["title", "How do I rails?"], ["body", "blah blah blah"], ["created_at", "2016-06-13 17:32:38.543089"], ["updated_at", "2016-06-13 17:32:38.543089"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "questions" ("asker", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["asker", "Keane"], ["title", "How do I JavaScript?"], ["body", "blah blah blah"], ["created_at", "2016-06-13 17:32:38.549755"], ["updated_at", "2016-06-13 17:32:38.549755"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "answers"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "answers" ("answerer", "question_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["answerer", "David"], ["question_id", 9], ["body", "You should google it"], ["created_at", "2016-06-13 17:32:38.563795"], ["updated_at", "2016-06-13 17:32:38.563795"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "answers" ("answerer", "question_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["answerer", "David"], ["question_id", 9], ["body", "You should bing it"], ["created_at", "2016-06-13 17:32:38.567128"], ["updated_at", "2016-06-13 17:32:38.567128"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/questions/5" for ::1 at 2016-06-13 13:32:49 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.0ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=5):
+  app/controllers/questions_controller.rb:7:in `show'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (127.5ms)
+
+
+Started GET "/questions/6" for ::1 at 2016-06-13 13:35:57 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 6]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=6):
+  app/controllers/questions_controller.rb:7:in `show'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (108.7ms)
+
+
+Started GET "/questions/6" for ::1 at 2016-06-13 13:36:10 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.8ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=6):
+  app/controllers/questions_controller.rb:7:in `show'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (108.5ms)
+
+
+Started GET "/questions/5" for ::1 at 2016-06-13 13:36:12 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=5):
+  app/controllers/questions_controller.rb:7:in `show'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (46.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (102.0ms)
+
+
+Started GET "/questions/6" for ::1 at 2016-06-13 13:37:16 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=6):
+  app/controllers/questions_controller.rb:7:in `show'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (100.1ms)
+
+
+Started GET "/questions/6" for ::1 at 2016-06-13 13:37:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.9ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+Completed 404 Not Found in 25ms (ActiveRecord: 6.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=6):
+  app/controllers/questions_controller.rb:7:in `show'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (125.9ms)
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+
+
+Started GET "/questions/5" for ::1 at 2016-06-13 13:38:10 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=5):
+  app/controllers/questions_controller.rb:7:in `show'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (122.5ms)
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions"
+
+
+Started GET "/questions/6" for ::1 at 2016-06-13 13:39:09 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 6]]
+Completed 404 Not Found in 8ms (ActiveRecord: 3.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=6):
+  app/controllers/questions_controller.rb:7:in `show'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (101.9ms)
+  [1m[36mQuestion Load (1.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (1.6ms)[0m  SELECT  "questions".* FROM "questions"  ORDER BY "questions"."id" DESC LIMIT 1
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:43:46 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.7ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 291ms (Views: 290.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:43:47 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:43:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:43:47 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:43:47 -0400
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:43:48 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered questions/show.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9: </div>
+    10: 
+    11: <!-- <div>
+    12:   <% @answers.each do |answer| %>
+    13:   <span><%= answer.title %></span>
+    14:   <br>
+    15:   <p>
+  app/views/questions/show.html.erb:12:in `_app_views_questions_show_html_erb___2133613386425362637_70192822030960'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (95.8ms)
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:44:05 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered questions/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:44:05 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:44:05 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:44:05 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:44:05 -0400
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:44:24 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered questions/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:44:24 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:44:24 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:44:24 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:44:24 -0400
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:44:26 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered questions/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:44:30 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:44:30 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:44:30 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:44:30 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:44:30 -0400
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:44:31 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered questions/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:45:07 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered questions/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9: </div>
+    10: 
+    11: <!-- <div>
+    12:   <% @answers.each do |answer| %>
+    13:   <span><%= answer.title %></span>
+    14:   <br>
+    15:   <p>
+  app/views/questions/show.html.erb:12:in `_app_views_questions_show_html_erb___2133613386425362637_70192874159740'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (98.5ms)
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:46:12 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mAnswer Load (0.7ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 9]]
+  Rendered questions/show.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 6.3ms)
+
+ActionView::Template::Error (undefined method `title' for #<Answer:0x007fae17ef2d48>):
+    10: 
+    11:  <div>
+    12:   <% @answers.each do |answer| %>
+    13:   <span><%= answer.title %></span>
+    14:   <br>
+    15:   <p>
+    16:     <%= answer.body %>
+  app/views/questions/show.html.erb:13:in `block in _app_views_questions_show_html_erb___2133613386425362637_70192831740100'
+  app/views/questions/show.html.erb:12:in `_app_views_questions_show_html_erb___2133613386425362637_70192831740100'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (115.5ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:46:37 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:46:37 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:46:37 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:46:37 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:46:37 -0400
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:46:38 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mAnswer Load (0.5ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 9]]
+  Rendered questions/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:48:37 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (1.1ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC
+  Rendered questions/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 30ms (Views: 21.8ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:48:37 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:48:37 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:48:37 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:48:37 -0400
+
+
+Started GET "/questions/10" for ::1 at 2016-06-13 13:48:38 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mAnswer Load (0.5ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 10]]
+  Rendered questions/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 17ms (Views: 11.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:48:40 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 9]]
+  Rendered questions/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:49:36 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC[0m
+  Rendered questions/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:49:36 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:49:36 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:49:36 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:49:36 -0400
+
+
+Started GET "/questions/10" for ::1 at 2016-06-13 13:49:37 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36mAnswer Load (0.5ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 10]]
+  Rendered questions/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:49:40 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mAnswer Load (0.5ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 9]]
+  Rendered questions/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/questions/10" for ::1 at 2016-06-13 13:50:19 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 10]]
+  Rendered questions/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:50:22 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 9]]
+  Rendered questions/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:50:39 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 9]]
+  Rendered questions/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:50:40 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:50:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:50:40 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:50:40 -0400
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:50:49 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 9]]
+  Rendered questions/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:50:49 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:50:49 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:50:49 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:50:49 -0400
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:53:39 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC
+  Rendered questions/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 36ms (Views: 27.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:53:39 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:53:39 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:53:39 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:53:39 -0400
+
+
+Started GET "/questions/10" for ::1 at 2016-06-13 13:53:40 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mAnswer Load (0.5ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 10]]
+  Rendered questions/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 28ms (Views: 13.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:53:42 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mAnswer Load (0.5ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 9]]
+  Rendered questions/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:54:27 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC[0m
+  Rendered questions/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 28ms (Views: 19.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:54:28 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:54:28 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:54:28 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:54:28 -0400
+
+
+Started GET "/questions/10" for ::1 at 2016-06-13 13:54:29 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 10]]
+  Rendered questions/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 33ms (Views: 9.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 13:54:30 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 9]]
+  Rendered questions/show.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 13:59:39 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (1.2ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC
+  Rendered questions/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 82ms (Views: 66.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 13:59:39 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 13:59:39 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 13:59:39 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 13:59:39 -0400
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:00:22 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC[0m
+  Rendered questions/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 14:00:23 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 14:00:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 14:00:23 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 14:00:23 -0400
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:06:38 -0400
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/frankcardillo/challenges/rescue-mission/app/views/questions/index.html.erb:13: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/frankcardillo/challenges/rescue-mission/app/views/questions/index.html.erb:15: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/questions/index.html.erb:13: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/questions/index.html.erb:15: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (121.0ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:08:11 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC
+  Rendered questions/index.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 3.6ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     8: <%end%>
+     9: </ul>
+    10: 
+    11: <%= form_for(@question) do |f| %>
+    12: <% end %>
+  app/views/questions/index.html.erb:11:in `_app_views_questions_index_html_erb___1599043803279538537_70192832262500'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (113.8ms)
+
+
+Started PUT "/__web_console/repl_sessions/05d0252262cc30fdc7d88489f71196d6" for ::1 at 2016-06-13 14:08:25 -0400
+
+
+Started PUT "/__web_console/repl_sessions/05d0252262cc30fdc7d88489f71196d6" for ::1 at 2016-06-13 14:08:28 -0400
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:08:57 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.9ms)[0m  [1mSELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC[0m
+  Rendered questions/index.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (undefined method `to_key' for #<Question::ActiveRecord_Relation:0x007fae18a29e28>):
+     8: <%end%>
+     9: </ul>
+    10: 
+    11: <%= form_for(@questions) do |f| %>
+    12: <% end %>
+  app/views/questions/index.html.erb:11:in `_app_views_questions_index_html_erb___1599043803279538537_70192857156920'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (115.0ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:09:18 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC
+  [1m[36mQuestion Load (1.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  ORDER BY "questions"."id" ASC LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 14:09:18 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 14:09:18 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 14:09:18 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 14:09:18 -0400
+
+
+Started GET "/questions/9" for ::1 at 2016-06-13 14:09:22 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 9]]
+  Rendered questions/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 26ms (Views: 16.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:16:40 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC
+  Rendered questions/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     8: <%end%>
+     9: </ul>
+    10: 
+    11: <%= form_for(@question) do |f| %>
+    12: 
+    13: <% end %>
+  app/views/questions/index.html.erb:11:in `_app_views_questions_index_html_erb___1599043803279538537_70192856882780'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (105.3ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:17:07 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.9ms)[0m  [1mSELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC[0m
+  Rendered questions/index.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     8: <%end%>
+     9: </ul>
+    10: 
+    11: <%= form_for(@question) do |f| %>
+    12:   <div class="field">
+    13:     <%= f.label :asker %><br />
+    14:     <%= f.text_field :asker %>
+  app/views/questions/index.html.erb:11:in `_app_views_questions_index_html_erb___1599043803279538537_70192859770520'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (115.4ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:17:31 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT  "questions".* FROM "questions"  ORDER BY "questions"."id" ASC LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 14:17:31 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 14:17:31 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 14:17:31 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 14:17:31 -0400
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:18:35 -0400
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.7ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC
+  Rendered questions/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     8: <%end%>
+     9: </ul>
+    10: 
+    11: <%= form_for @question do |f| %>
+    12:   <div class="field">
+    13:     <%= f.label :asker %><br />
+    14:     <%= f.text_field :asker %>
+  app/views/questions/index.html.erb:11:in `_app_views_questions_index_html_erb___1599043803279538537_70192859260220'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (119.8ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:20:28 -0400
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/frankcardillo/challenges/rescue-mission/app/views/questions/index.html.erb:11: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...pend=  form_for @question, as :post, url: questions_path,
+...                               ^
+/Users/frankcardillo/challenges/rescue-mission/app/views/questions/index.html.erb:12: syntax error, unexpected ',', expecting :: or '[' or '.'
+...  html: { class "new_question", id: "new_question" } do |f| ...
+...                               ^
+/Users/frankcardillo/challenges/rescue-mission/app/views/questions/index.html.erb:12: syntax error, unexpected '}', expecting keyword_end
+...question", id: "new_question" } do |f| @output_buffer.safe_a...
+...                               ^):
+  app/views/questions/index.html.erb:11: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  app/views/questions/index.html.erb:12: syntax error, unexpected ',', expecting :: or '[' or '.'
+  app/views/questions/index.html.erb:12: syntax error, unexpected '}', expecting keyword_end
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (115.0ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:20:39 -0400
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/frankcardillo/challenges/rescue-mission/app/views/questions/index.html.erb:11: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...pend=  form_for @question, as :post, url: questions_path, ht...
+...                               ^
+/Users/frankcardillo/challenges/rescue-mission/app/views/questions/index.html.erb:11: syntax error, unexpected ',', expecting :: or '[' or '.'
+..., html: { class "new_question", id: "new_question" } do |f| ...
+...                               ^
+/Users/frankcardillo/challenges/rescue-mission/app/views/questions/index.html.erb:11: syntax error, unexpected '}', expecting keyword_end
+...question", id: "new_question" } do |f| @output_buffer.safe_a...
+...                               ^):
+  app/views/questions/index.html.erb:11: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  app/views/questions/index.html.erb:11: syntax error, unexpected ',', expecting :: or '[' or '.'
+  app/views/questions/index.html.erb:11: syntax error, unexpected '}', expecting keyword_end
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (108.2ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:21:06 -0400
+Processing by QuestionsController#index as HTML
+  Rendered questions/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/frankcardillo/challenges/rescue-mission/app/views/questions/index.html.erb:11: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...pend=  form_for @question, as :post, url: questions_path, ht...
+...                               ^
+/Users/frankcardillo/challenges/rescue-mission/app/views/questions/index.html.erb:11: syntax error, unexpected keyword_do_block, expecting keyword_end
+...stion", id: "new_question" } do |f| @output_buffer.safe_appe...
+...                               ^):
+  app/views/questions/index.html.erb:11: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  app/views/questions/index.html.erb:11: syntax error, unexpected keyword_do_block, expecting keyword_end
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (108.2ms)
+
+
+Started GET "/questions" for ::1 at 2016-06-13 14:24:40 -0400
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.9ms)[0m  [1mSELECT "questions".* FROM "questions"  ORDER BY "questions"."created_at" DESC[0m
+  Rendered questions/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 14:24:41 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 14:24:41 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 14:24:41 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-06-13 14:24:41 -0400
+
+
+Started POST "/questions" for ::1 at 2016-06-13 14:25:32 -0400
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i0uhCpLyuVjBWIgAvxgJqqErZveqTE0XlGAltaOexBXFr3pR4YD0nD1tosjmabxnHZwyPhZzaUBnGLNokxP09w==", "question"=>{"asker"=>"David", "title"=>"How do I forms?", "body"=>"blah blah blah"}, "commit"=>"Save Question"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `question_params' for #<QuestionsController:0x007fae17b494f8>):
+  app/controllers/questions_controller.rb:12:in `create'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (106.9ms)
+
+
+Started POST "/questions" for ::1 at 2016-06-13 14:27:58 -0400
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i0uhCpLyuVjBWIgAvxgJqqErZveqTE0XlGAltaOexBXFr3pR4YD0nD1tosjmabxnHZwyPhZzaUBnGLNokxP09w==", "question"=>{"asker"=>"David", "title"=>"How do I forms?", "body"=>"blah blah blah"}, "commit"=>"Save Question"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 5.4ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/questions_controller.rb:12:in `create'
+
+
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.8ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.2ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.4ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/frankcardillo/.gem/ruby/2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (97.4ms)
