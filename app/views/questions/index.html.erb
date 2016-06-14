@@ -8,9 +8,4 @@
 <%end%>
 </ul>
 
-<%= form_for :question do |f| %>
-  Your Name: <%= f.text_field :asker %><br />
-  Your Question: <%= f.text_field :title %><br />
-  Description: <%= f.text_area :body %><br />
-  <%= f.submit %>
-<% end %>
+<%= render 'question_form' %>
