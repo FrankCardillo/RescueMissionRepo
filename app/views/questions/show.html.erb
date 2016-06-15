@@ -3,7 +3,7 @@
   <span><%= @question.title %></span>
   <br>
   <p>
-    <%= @question.body %>
+    <%= markdown(@question.body) %>
   </p>
   <br>
   <span><%= @question.asker %></span>
@@ -13,14 +13,22 @@
 
 <h2>Answers:</h2>
   <%= render 'answer_form' %>
+
  <div>
   <% @answers.each do |answer| %>
   <p>
-    <%= answer.body %>
+    <%= markdown(answer.body) %>
   </p>
   <br>
   <span><%= answer.answerer %></span>
   <br>
+  <%if !answer.best%>
+  <%= button_to "Best Answer", question_answer_path(@question.id, answer.id), :method=>:put %>
+  <% else %>
+  <p>
+    BEST ANSWER
+  </p>
+  <% end %>
   <span>=======================</span>
   <%end%>
 </div>

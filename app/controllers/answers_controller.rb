@@ -21,6 +21,26 @@ class AnswersController < ApplicationController
     end
   end
 
+  def edit
+    @answer = Answer.find(params[:id])
+    @question = @answer.question
+  end
+
+  def update
+    @answer = Answer.find(params[:id])
+    @question = @answer.question
+
+    Answer.update_all(best: false)
+
+    if @answer.update(best: true)
+      flash[:success] = "Answer successfully updated"
+      redirect_to question_path(@question)
+    else
+      flash[:errors] = @answer.errors.full_messages.join(', ')
+      render 'questions/show'
+    end
+  end
+
   private
 
   def answer_params

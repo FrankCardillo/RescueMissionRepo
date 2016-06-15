@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @answers = @question.answers
+    @answers = @question.answers.order(best: :desc)
     @answer = Answer.new
   end
 
@@ -16,6 +16,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+
     if @question.save
       flash[:success] = "Question successfully added."
       redirect_to questions_path(@questions)
@@ -32,6 +33,7 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
+
     if @question.update(question_params)
       flash[:success] = "Question successfully updated"
       redirect_to question_path(@question)
